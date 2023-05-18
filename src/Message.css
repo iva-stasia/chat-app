@@ -1,0 +1,34 @@
+.message {
+  gap: 0.5rem;
+  display: flex;
+  align-items: end;
+}
+
+.message + .message {
+  margin-top: 1rem;
+}
+
+.avatar {
+  height: 3rem;
+}
+
+.message-sender {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.message-text {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-radius: 0.5rem 0.5rem 0.5rem 0;
+  background-color: #ebebeb;
+}
+
+.message-time {
+  align-self: flex-end;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b6b6b;
+}

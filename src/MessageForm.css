@@ -1,0 +1,32 @@
+.message-input {
+  padding: 1rem;
+  flex: 0 0 auto;
+  display: flex;
+  gap: 1rem;
+  border-top: 2px solid #d6d6d6;
+}
+
+.input {
+  height: auto;
+  flex: 1 1 auto;
+  padding: 0.5rem;
+  resize: none;
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  background-color: #ebebeb;
+}
+
+.input::placeholder {
+  color: #adadad;
+}
+
+.sender-select {
+  appearance: none;
+}
+
+.send-btn {
+  color: #f1f1f1;
+  background-color: #1e1e1e;
+}
