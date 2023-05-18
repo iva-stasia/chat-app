@@ -17,6 +17,7 @@ function App() {
           <h2>Chat &#128172;</h2>
         </div>
         <div className="chat-messages">
+          {messages.length === 0 && 'No messages here yet...'}
           {messages.map(({ text, sender, time }, id) => {
             return <Message text={text} sender={sender} time={time} key={id} />;
           })}
