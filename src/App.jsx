@@ -3,7 +3,7 @@ import './App.css';
 import Message from './Message';
 import MessageForm from './MessageForm';
 
-function App() {
+function App({ senders }) {
   const [messages, setMessages] = useState([]);
 
   function addMessage(message, sender, time) {
@@ -22,7 +22,7 @@ function App() {
             return <Message text={text} sender={sender} time={time} key={id} />;
           })}
         </div>
-        <MessageForm onSubmit={addMessage} />
+        <MessageForm onSubmit={addMessage} senders={senders} />
       </div>
     </>
   );

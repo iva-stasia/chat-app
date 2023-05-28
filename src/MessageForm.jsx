@@ -1,23 +1,8 @@
 import { useState } from 'react';
 import './MessageForm.css'
 
-const senders = {
-  unicorn: {
-    name: 'Unicorn',
-    imagePath: 'https://img.icons8.com/flat-round/64/unicorn.png',
-  },
-  lama: {
-    name: 'Lama',
-    imagePath: 'https://img.icons8.com/flat-round/64/llama.png',
-  },
-  ladybug: {
-    name: 'Ladybug',
-    imagePath: 'https://img.icons8.com/flat-round/64/insect--v1.png',
-  },
-};
-
-export default function MessageForm({ onSubmit }) {
-  const [sender, setSender] = useState(senders.unicorn);
+export default function MessageForm({ onSubmit, senders }) {
+  const [sender, setSender] = useState('');
   const [message, setMessage] = useState('');
 
   function handleSubmit(e) {
@@ -44,6 +29,7 @@ export default function MessageForm({ onSubmit }) {
       />
       <select
         className="sender-select"
+        defaultValue=''
         onChange={(e) => setSender(senders[e.target.value])}
         name="sender"
         required>
