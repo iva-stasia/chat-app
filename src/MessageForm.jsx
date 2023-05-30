@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './MessageForm.css'
+import './MessageForm.css';
 
 export default function MessageForm({ onSubmit, senders }) {
   const [sender, setSender] = useState('');
@@ -7,13 +7,13 @@ export default function MessageForm({ onSubmit, senders }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     const date = new Date();
     const minutes =
       date.getMinutes() > 9 ? date.getMinutes() : '0' + date.getMinutes();
     const time = `${date.getHours()}:${minutes} ${date.toLocaleDateString()}`;
 
     onSubmit(message, sender, time);
-
     setMessage('');
   }
 
@@ -29,16 +29,20 @@ export default function MessageForm({ onSubmit, senders }) {
       />
       <select
         className="sender-select"
-        defaultValue=''
+        defaultValue=""
         onChange={(e) => setSender(senders[e.target.value])}
         name="sender"
         required>
         <option value="" disabled>
-          Select Sender:
+          Select Sender
         </option>
-        <option value="unicorn">&#129412; Unicorn</option>
-        <option value="lama">&#129433; Lama</option>
-        <option value="ladybug">&#128030; Ladybug</option>
+        {senders.map(({ name, iconCode }, id) => {
+          return (
+            <option value={id} key={name}>
+              {String.fromCodePoint(iconCode)} {name}
+            </option>
+          );
+        })}
       </select>
       <button className="send-btn">Send</button>
     </form>
