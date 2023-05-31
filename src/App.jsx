@@ -7,7 +7,7 @@ function App({ senders }) {
   const [messages, setMessages] = useState([]);
 
   function addMessage(message, sender, time) {
-    setMessages([...messages, { text: message, sender, time }]);
+    setMessages((prevMessages) => [...prevMessages, { text: message, sender, time }]);
   }
 
   return (
